@@ -16,6 +16,15 @@
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
+#cd   target/linux/ar71xx/image
+cp target/linux/ar71xx/image/legacy.mk target/linux/ar71xx/image/legacy.mk.bak
+ubi=110592
+firmware=112640
+sed -i "s/\(^wndr4300_mtdlayout.*\)23552k\(.ubi..\)25600k\(.*$\)/\1${ubi}k\2${firmware}k\3/" target/linux/ar71xx/image/legacy.mk
+#diff -u0 legacy.mk.bak legacy.mk
+
+
 #cd lede/package/lean
 git clone https://github.com/kenzok8/openwrt-packages.git package/lean
 git clone https://github.com/kenzok8/small.git package/lean
+

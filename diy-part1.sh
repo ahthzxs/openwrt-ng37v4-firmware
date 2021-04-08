@@ -25,6 +25,6 @@ sed -i "s/\(^wndr4300_mtdlayout.*\)23552k\(.ubi..\)25600k\(.*$\)/\1${ubi}k\2${fi
 
 
 #cd lede/package/lean
-git clone https://github.com/kenzok8/openwrt-packages.git package/lean/
-git clone https://github.com/kenzok8/small.git package/lean/
+git clone https://github.com/kenzok8/openwrt-packages.git package/lean/openwrt-packages
+git clone https://github.com/kenzok8/small.git package/lean/small
 
